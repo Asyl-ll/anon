@@ -118,9 +118,8 @@
 <body>
 
     <div class="card">
-        <div class="avatar">👤</div>
         <h2>Анонимный вопрос</h2>
-        <p>Чистый фронтенд-эксперимент. Напиши сообщение, и оно улетит прямо в Telegram-бота без участия сервера.</p>
+        <p></p>
         
         <textarea id="messageInput" placeholder="Напиши что-нибудь интересное..."></textarea>
         <button id="sendBtn" onclick="sendMessage()">Отправить</button>
@@ -167,10 +166,10 @@
                 const data = await response.json();
 
                 if (data.ok) {
-                    showStatus('🚀 Успешно отправлено прямо в бот!', 'success');
+                    showStatus('отправлено', 'success');
                     textarea.value = ''; // очищаем поле
                 } else {
-                    showStatus('Ошибка Telegram: ' + data.description, 'error');
+                    showStatus('Ошибка: ' + data.description, 'error');
                 }
             } catch (err) {
                 showStatus('Сетевая ошибка. Возможно, Telegram заблокирован или нет интернета.', 'error');
